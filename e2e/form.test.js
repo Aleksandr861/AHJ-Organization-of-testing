@@ -5,7 +5,7 @@ jest.setTimeout(30000);
 describe('Form', () => {
     let browser = null;
     let page = null;
-    const baseUrl = 'http://localhost:9000';
+    const baseUrl = 'http://localhost:8080';
 
     beforeAll(async () => {
         browser = await puppeteer.launch({ headless: true });
