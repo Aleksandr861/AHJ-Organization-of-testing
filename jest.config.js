@@ -1,9 +1,9 @@
 module.exports = {
-  testEnvironment: 'jsdom',
-  moduleNameMapper: {
-    '\\.(css|less)$': 'identity-obj-proxy',
-    '\\.(svg|png)$': '<rootDir>/__mocks__/fileMock.js'
-  }
+    testEnvironment: 'jsdom',
+    moduleNameMapper: {
+        '\\.(css|less)$': 'identity-obj-proxy',
+        '\\.(svg|png)$': '<rootDir>/__mocks__/fileMock.js'
+    }
 };
 // module.exports = {
 //     moduleNameMapper: {

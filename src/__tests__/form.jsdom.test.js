@@ -114,7 +114,9 @@ describe('check tooltip textContent on form submit', () => {
         ],
     ])('comparing tooltip textcontent for input "%s" with text "%s', (input, text) => {
         formInput.value = input;
-        form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+        form.dispatchEvent(new Event('submit', {
+            bubbles: true, cancelable: true
+        }));
         expect(formTooltip.textContent).toBe(text);
     });
 });
