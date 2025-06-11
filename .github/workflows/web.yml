@@ -1,4 +1,4 @@
-name: AHJ-Organization of testing
+name: AHJ-Organization of Testing
 
 on:
   push:
@@ -22,19 +22,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build project
+      - name: Build project using webpack
         run: npm run build
 
       - name: Lint code
         run: npm run lint
 
       - name: Run tests
-        run: |
-          npm run test
+        run: npm run test
 
       - name: Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "action@github.com"
           echo "https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-          npx gh-pages -d dist
+          npx gh-pages -d dist -u "GitHub Actions <action@github.com>"
