@@ -39,3 +39,5 @@ jobs:
     git config --global user.email "mamont861@yandex.ru"
     git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/username/repo.git
     npx gh-pages -d dist -u "GitHub Actions <action@github.com>"
+      - name: Deploy to GitHub Pages
+ 
