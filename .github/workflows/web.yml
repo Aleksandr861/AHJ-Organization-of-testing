@@ -1,4 +1,4 @@
-name: AHJ-Organization of Testing
+name: AHJ-Organization-of-Testing
 
 on:
   push:
@@ -37,5 +37,5 @@ jobs:
         run: |
           git config --global user.name "Aleksandr Mamontov"
           git config --global user.email "mamont861@yandex.ru"
-          git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/username/repo.git
+          git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/Aleksandr861/AHJ-Organization-of-testing.git
           npx gh-pages -d dist -u "GitHub Actions <action@github.com>"
