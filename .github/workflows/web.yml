@@ -35,7 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "action@github.com"
+          git config --global Aleksandr861 "GitHub Actions"
+          git config --global mamont861@yandex.ru "action@github.com"
           echo "https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com" > "$HOME/.git-credentials"
           npx gh-pages -d dist -u "GitHub Actions <action@github.com>"
