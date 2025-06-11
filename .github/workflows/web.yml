@@ -1,7 +1,5 @@
 name: AHJ-Organization of Testing
 
-name: Node CI/CD
-
 on:
   push:
     branches:
