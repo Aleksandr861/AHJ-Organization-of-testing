@@ -32,9 +32,9 @@ jobs:
         run: |
           npm run test
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-        echo "https://${{ secrets.GITHUB_TOKEN }}: x-oauth-basic@github.com" > "$HOME/.git-credentials"
-        npx gh-pages -d dist 
+          echo "https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+          npx gh-pages -d dist
