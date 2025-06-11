@@ -33,10 +33,9 @@ jobs:
           npm run test
 
       - name: Deploy to GitHub Pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "action@github.com"
-          echo "https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-          npx gh-pages -d dist -u "GitHub Actions <action@github.com>"
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  run: |
+    git config --global credential.helper store
+    echo "https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+    npx gh-pages -d dist
