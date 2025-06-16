@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     output: { clean: true, },
@@ -41,5 +43,12 @@ module.exports = {
             filename: 'index.html',
         }),
         new MiniCssExtractPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: 'LICENSE', to: 'LICENSE'
+                } // Копируем LICENSE в папку сборки
+            ],
+        }),
     ],
 };
